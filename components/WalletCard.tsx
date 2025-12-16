@@ -45,7 +45,7 @@ export default function WalletCard() {
         </div>
         <div className="text-5xl">💰</div>
       </div>
-      <p className="text-xs text-gray-600 mt-4">Default: ₹50,000 | Real-time updates every 5 seconds</p>
+      <p className="text-xs text-gray-600 mt-4">Aanchal_Maker</p>
     </div>
   );
 }

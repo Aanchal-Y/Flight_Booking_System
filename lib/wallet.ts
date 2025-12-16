@@ -28,7 +28,15 @@ export async function deductFromWallet(userId: string, amount: number): Promise<
       return false;
     }
 
-    return db.deductFromWallet(userId, amount);
+    const deducted = db.deductFromWallet(userId, amount);
+
+    // Check if balance reaches 0 and reset to 50000
+    const newBalance = await getWalletBalance(userId);
+    if (newBalance <= 0) {
+      await db.addToWallet(userId, DEFAULT_BALANCE);
+    }
+
+    return deducted;
   } catch (error) {
     console.error('Error deducting from wallet:', error);
     throw error;

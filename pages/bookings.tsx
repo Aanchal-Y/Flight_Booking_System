@@ -49,9 +49,10 @@ export default function BookingsPage() {
       const link = document.createElement('a');
       link.href = `/api/tickets/download?bookingId=${booking.booking_id}&userId=${userId}`;
       link.download = `ticket_${booking.pnr}.pdf`;
+      link.target = '_blank';
       document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
+      setTimeout(() => document.body.removeChild(link), 100);
     } catch (error) {
       console.error('Download error:', error);
       alert('Failed to download ticket. Please try again.');

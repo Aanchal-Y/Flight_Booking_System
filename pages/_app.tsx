@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </main>
       <footer className="bg-gray-800 text-white text-center py-6 mt-12">
-        <p>© 2024 SkyBook - Flight Booking System</p>
+        <p>© 2025 SkyBook - Flight Booking System</p>
       </footer>
     </div>
   );

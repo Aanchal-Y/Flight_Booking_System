@@ -86,9 +86,10 @@ export default function BookingModal({ flight, onClose }: BookingModalProps) {
                 const link = document.createElement('a');
                 link.href = `/api/tickets/download?bookingId=${bookingResult.bookingId}&userId=${userId}`;
                 link.download = `ticket_${bookingResult.pnr}.pdf`;
+                link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();
-                document.body.removeChild(link);
+                setTimeout(() => document.body.removeChild(link), 100);
               }}
               className="w-full button-primary"
             >
@@ -98,7 +99,7 @@ export default function BookingModal({ flight, onClose }: BookingModalProps) {
               onClick={onClose}
               className="w-full button-secondary"
             >
-              Continue Shopping
+              Continue Booking
             </button>
           </div>
         </div>

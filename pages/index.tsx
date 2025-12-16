@@ -3,7 +3,6 @@ import Link from 'next/link';
 import SearchForm from '@/components/SearchForm';
 import FlightCard from '@/components/FlightCard';
 import WalletCard from '@/components/WalletCard';
-import MagnetLines from '@/components/MagnetLines';
 import { useUser } from '@/hooks/useUser';
 
 interface Flight {
@@ -63,19 +62,6 @@ export default function Home() {
 
   return (
     <div>
-      <div className="mb-8">
-        <MagnetLines
-          rows={9}
-          columns={9}
-          containerSize="60vmin"
-          lineColor="tomato"
-          lineWidth="0.8vmin"
-          lineHeight="5vmin"
-          baseAngle={0}
-          style={{ margin: '2rem auto' }}
-        />
-      </div>
-
       <div className="mb-8">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent mb-6">✈️ Find Your Perfect Flight</h2>
         <SearchForm onSearch={handleSearch} loading={loading} />
